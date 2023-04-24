@@ -1,7 +1,7 @@
 name: Some Actions
 on: workflow_dispatch
 jobs:
-  checkout:
+  Checkout-and-prepare-environment:
     name: Checkout the repo (job)
     runs-on: ubuntu-latest
     steps:
@@ -11,7 +11,10 @@ jobs:
         uses: actions/setup-node@v3
       - name: Install dependencies
         run: npm ci
-      #- name: Run tests
-      # run: npm test
-        
 
+  Build-environment:
+    name: Build environment      
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build the environment
+        run: npm build
