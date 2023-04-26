@@ -13,11 +13,12 @@ jobs:
         run: npm ci
 
   Build-environment:
+    needs: Checkout-and-prepare-environment
     name: Build environment      
     runs-on: ubuntu-latest
     steps:
       - name: Build the environment
-        run: npm build
+        run: npm run build
 
   Output-metadata:
     runs-on: ubuntu-latest
