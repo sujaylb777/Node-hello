@@ -18,3 +18,9 @@ jobs:
     steps:
       - name: Build the environment
         run: npm build
+
+  Output-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output data
+        run: echo " ${{ github }}"
